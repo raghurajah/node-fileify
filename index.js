@@ -96,7 +96,7 @@ module.exports = function (target, dir, optsOrEx) {
             });
             
             var bodies = files.reduce(function (acc, file) {
-                var rel = file.slice(dir.length + 1);
+                var rel = file.slice(dir.length - 1);
                 acc[rel] = fs.readFileSync(file, 'utf8');
                 return acc;
             }, {});
